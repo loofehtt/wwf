@@ -24,7 +24,6 @@
                     <th scope="col">Tệp kết quả</th>
                     <th scope="col">Kí tên</th>
                 </tr>
-                <a href=""></a>
             </thead>
             <tbody>
                 <?php

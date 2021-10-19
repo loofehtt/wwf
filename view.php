@@ -2,63 +2,38 @@
 $filename = $_GET['file'];
 
 $fp = fopen($filename, "r"); //mở file ở chế độ đọc
+$contents = fread($fp, filesize($filename));
+$items = explode("\n\n", $contents);
+$item = explode("\n", $items[9]);
+$mark = explode(":", $item[1]);
+echo $mark[1];
+// echo $items[1]; //in nội dung của file ra màn hình
+?>
 
-$contents = fread($fp, filesize($filename)); //đọc file
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Stt</th>
+            <th scope="col">Nội dung câu hỏi</th>
+            <th scope="col">Điểm đạt</th>
+            <th scope="col">Đáp án đã chọn</th>
+        </tr>
+    </thead>
 
-echo "<pre>$contents</pre>"; //in nội dung của file ra màn hình
+    <tbody>
+        <?php
+        $items = explode("\n\n", $contents);
+        for ($i = 1; $i <= count($items); $i++) {
+            $item = explode("\n", $items[$i]);
+            $mark = explode(":", $item[$i]);
 
-// //how many lines?
-// $linecount = 4;
+            echo "<tr>";
+            echo "<td>$i</td>";
+            echo "<td>$item[0]</td>";
+            echo "<td>$mark[1]</td>";
+            echo "<td>$item[3]</td>";
+            echo "</tr>";
+        }
+        ?>
 
-// //what's a typical line length?
-// $length = 40;
-
-// //which file?
-// $filename;
-
-// //we double the offset factor on each iteration
-// //if our first guess at the file offset doesn't
-// //yield $linecount lines
-// $offset_factor = 1;
-
-
-// $bytes = filesize($filename);
-
-// $fp = fopen($filename, "r") or die("Can't open $file");
-
-
-// $complete = false;
-// while (!$complete) {
-//     //seek to a position close to end of file
-//     $offset = $linecount * $length * $offset_factor;
-//     fseek($fp, -$offset, SEEK_END);
-
-
-//     //we might seek mid-line, so read partial line
-//     //if our offset means we're reading the whole file, 
-//     //we don't skip...
-//     if ($offset < $bytes)
-//         fgets($fp);
-
-//     //read all following lines, store last x
-//     $lines = array();
-//     while (!feof($fp)) {
-//         $line = fgets($fp);
-//         array_Push($lines, $line);
-//         if (count($lines) > $linecount) {
-//             array_shift($lines);
-//             $complete = true;
-//         }
-//     }
-
-//     //if we read the whole file, we're done, even if we
-//     //don't have enough lines
-//     if ($offset >= $bytes)
-//         $complete = true;
-//     else
-//         $offset_factor *= 2; //otherwise let's seek even further back
-
-// }
-// fclose($fp);
-
-// var_dump($lines);
+    </tbody>

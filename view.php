@@ -23,7 +23,7 @@ echo $mark[1];
     <tbody>
         <?php
         $items = explode("\n\n", $contents);
-        for ($i = 1; $i <= count($items); $i++) {
+        for ($i = 1; $i < count($items) - 1; $i++) {
             $item = explode("\n", $items[$i]);
             // $mark = explode(":", $item[$i]);
 

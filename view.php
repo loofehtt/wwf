@@ -25,12 +25,12 @@ echo $mark[1];
         $items = explode("\n\n", $contents);
         for ($i = 1; $i <= count($items); $i++) {
             $item = explode("\n", $items[$i]);
-            $mark = explode(":", $item[$i]);
+            // $mark = explode(":", $item[$i]);
 
             echo "<tr>";
             echo "<td>$i</td>";
             echo "<td>$item[0]</td>";
-            echo "<td>$mark[1]</td>";
+            echo "<td>$item[1]</td>";
             echo "<td>$item[3]</td>";
             echo "</tr>";
         }

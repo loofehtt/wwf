@@ -18,14 +18,15 @@
             $file = scandir('./result');
             for ($i = 2; $i < count($file); $i++) {
                 $items = explode('_', $file[$i]);
-                $label = explode('.', $items[2])[0];
-                $date = explode('.', $items[4])[0];
-                $time = explode('.', $items[5])[0];
+                $label = $items[2];
+                $id = $items[3];
+                $date = $items[4];
+                $time = $items[5];
                 $mark = explode('.', $items[6])[0];
 
                 echo "<tr>";
                 echo "<td>" . ($i - 1) . "</td>";
-                echo "<td>chy01024</td>";
+                echo "<td>$id</td>";
                 echo "<td>$label</td>";
                 echo "<td>$date</td>";
                 echo "<td>$time</td>";

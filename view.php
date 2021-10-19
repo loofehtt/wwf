@@ -24,7 +24,7 @@ $time = $info[5];
 <div class="wrapper p-0 m-0 mt-2" style="font-family: serif;">
     <div class="row">
         <div class="ms-5">
-            <p class="mb-0">BỘ NN & PTNT</p>
+            <p class="mb-0 ms-2">BỘ NN & PTNT</p>
         </div>
         <div class="fw-bold ms-1">
             <p>TRƯỜNG ĐẠI HỌC THUỶ LỢI</p>

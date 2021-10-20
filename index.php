@@ -1,9 +1,24 @@
 <?php include './reuse/header.php' ?>
-<div class="wrapper">
-    <table class="table">
+<div class="wrapper p-0 m-0 mt-4" style="font-family: serif;">
+    <div class="row">
+        <div class="ms-5">
+            <p class="mb-0 ms-2">BỘ NN & PTNT</p>
+        </div>
+        <div class="fw-bold ms-1">
+            <p>TRƯỜNG ĐẠI HỌC THUỶ LỢI</p>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <h4 class="fw-bold">DANH SÁCH TỔNG HỢP BÀI THI CỦA THÍ SINH</h4>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table table-bordered border-dark mt-3">
         <thead>
-            <tr>
-                <th scope="col">Stt</th>
+            <tr class="text-center table-dark">
+                <th scope="col">Số thứ tự</th>
                 <th scope="col">Số báo danh</th>
                 <th scope="col">Mã bài thi</th>
                 <th scope="col">Ngày thi</th>
@@ -24,7 +39,7 @@
                 $time = $items[5];
                 $mark = explode('.', $items[6])[0];
 
-                echo "<tr>";
+                echo '<tr class="text-center">';
                 echo "<td>" . ($i - 1) . "</td>";
                 echo "<td>$id</td>";
                 echo "<td>$label</td>";
@@ -40,5 +55,6 @@
         </tbody>
     </table>
 </div>
+
 
 <?php include './reuse/footer.php' ?>

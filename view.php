@@ -21,7 +21,7 @@ $time = $info[5];
 
 <!-- display header -->
 
-<div class="wrapper p-0 m-0 mt-2" style="font-family: serif;">
+<div class="wrapper p-0 m-0 mt-4" style="font-family: serif;">
     <div class="row">
         <div class="ms-5">
             <p class="mb-0 ms-2">BỘ NN & PTNT</p>
